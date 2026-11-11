@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "reviewed_files": 21,
+  "missing": [],
+  "unexpected": [],
+  "pattern_findings": [],
+  "files_over_1MiB": [],
+  "changed_since_manifest": [],
+  "preserved_core_hashes_match": {
+    "recap/frontend.py": true,
+    "recap/graph.py": true,
+    "recap/greedy.py": true,
+    "recap/backend.py": true
+  },
+  "scope": "Static credential-pattern, private-path, explicit-file and large-file scan; not a guarantee against every possible secret."
+}

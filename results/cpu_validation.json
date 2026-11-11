@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "cuda_visible_devices": "",
+  "versions": {
+    "python": "3.10.19",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "torch": "2.1.2+cu121"
+  },
+  "source_archive_sha256": "95a6f29387d8bece7793bf1240c5d408f566ede419e759ac29e469f04c590fa2",
+  "results": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_each_record_has_total_demand_one (test_core.BudgetAndGreedyTests) ... ok\ntest_flat_marginals_fill_budget_deterministically (test_core.BudgetAndGreedyTests) ... ok\ntest_lazy_greedy_matches_independent_dense_oracle (test_core.BudgetAndGreedyTests) ... ok\ntest_nested_prefix_is_same_as_independent_short_run (test_core.BudgetAndGreedyTests) ... ok\ntest_real_budget_is_exact_and_double_prefix_fits_every_leaf (test_core.BudgetAndGreedyTests) ... ok\ntest_backend_recomputes_reference_on_its_actual_graph (test_core.FrozenExchangeTests) ... ok\ntest_final_floor_and_objective_match_dense_oracle (test_core.FrozenExchangeTests) ... ok\ntest_global_improvement_cannot_violate_one_group_floor (test_core.FrozenExchangeTests) ... ok\ntest_incremental_state_matches_fresh_independent_reconstruction (test_core.FrozenExchangeTests) ... ok\ntest_joint_swap_can_preserve_floors_when_every_single_swap_fails (test_core.FrozenExchangeTests) ... ok\ntest_zero_and_negative_gain_exchanges_are_rejected (test_core.FrozenExchangeTests) ... ok\ntest_direction_and_image_are_both_required (test_core.RecordKernelTests) ... ok\ntest_missing_direction_fails_instead_of_silently_losing_demands (test_core.RecordKernelTests) ... ok\ntest_positive_boundary_ties_are_deterministic (test_core.RecordKernelTests) ... ok\ntest_record_max_precedes_topk (test_core.RecordKernelTests) ... ok\ntest_self_is_valid_coverage_but_does_not_duplicate_a_facility (test_core.RecordKernelTests) ... ok\ntest_balanced_tree_is_a_deterministic_complete_partition (test_core.TargetPartitionTests) ... ok\ntest_degenerate_features_have_reproducible_balanced_tie_breaks (test_core.TargetPartitionTests) ... ok\ntest_nested_frontend_matches_dense_oracle_and_keeps_prefix (test_core.TargetPartitionTests) ... ok\ntest_record_representation_does_not_depend_on_qa_storage_order (test_core.TargetPartitionTests) ... ok\ntest_end_to_end_and_independent_dense_oracle (test_portable.PortableTests) ... ok\ntest_input_schema_rejects_missing_owner_and_fractional_owner (test_portable.PortableTests) ... ok\ntest_invalid_leaf_capacity_and_existing_run_fail (test_portable.PortableTests) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.309s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "recap",
+        "demo",
+        "--output",
+        "outputs/demo"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"synthetic_demo\": true,\n  \"selection\": {\n    \"status\": \"passed\",\n    \"independent_csr_recomputation\": true,\n    \"records\": 32,\n    \"selected_records\": 8,\n    \"candidate_records\": 16,\n    \"groups\": 4,\n    \"all_group_floors_pass\": true,\n    \"reference_objective\": 0.40168615816522407,\n    \"objective\": 0.4019094775818909,\n    \"minimum_positive_baseline_group_ratio\": 1.0,\n    \"zero_baseline_groups\": [],\n    \"reference_intersection\": 7\n  },\n  \"export\": {\n    \"unique_records\": 8,\n    \"padding_records\": 120,\n    \"training_records\": 128,\n    \"shuffle_seed\": 42,\n    \"pad_to\": 128,\n    \"pool_sha256\": \"804992a49db05664af9fbd04fdb93fe6016e6609b89e3d04772f11385ddc2d06\",\n    \"selection_manifest_sha256\": \"2f419663a0d9705a49287e8e6a7e60a548281b65f56d90ed816f8afbd0c5a9cd\",\n    \"train_sha256\": \"1a39998fe1bc6a258b3c82317d5b32461c2b4fe693f4f7ff83f9806ecba500b8\",\n    \"mapping_contract\": \"Caller must ensure pool row order matches feature image rows; row semantics cannot be inferred from vectors.\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "recap",
+        "validate",
+        "--run",
+        "outputs/demo/run"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"independent_csr_recomputation\": true,\n  \"records\": 32,\n  \"selected_records\": 8,\n  \"candidate_records\": 16,\n  \"groups\": 4,\n  \"all_group_floors_pass\": true,\n  \"reference_objective\": 0.40168615816522407,\n  \"objective\": 0.4019094775818909,\n  \"minimum_positive_baseline_group_ratio\": 1.0,\n  \"zero_baseline_groups\": [],\n  \"reference_intersection\": 7\n}\n",
+      "stderr": ""
+    }
+  ],
+  "notes": [
+    "Validation ran in an isolated extracted source tree with CUDA_VISIBLE_DEVICES empty.",
+    "PyTorch emitted an environment deprecation warning; private interpreter paths and the unrelated warning were omitted from this public log."
+  ]
+}

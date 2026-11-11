@@ -1,0 +1,81 @@
+{
+  "release_name": "ReCAP portable selection core",
+  "snapshot_date": "2026-11-11",
+  "implementation_name": "ResidualCover",
+  "source_files": {
+    "residualcover/frontend.py": {
+      "sha256": "3f00461fd1fc1bfcfeae455b5bd6c0f0af081075f18b1ed7f0d2010f3f886b5b"
+    },
+    "residualcover/graph.py": {
+      "sha256": "9c6c190214254873be489eccf321d878f9924cc686922c7c91a78fd3a521b203"
+    },
+    "residualcover/greedy.py": {
+      "sha256": "bddb61d53d8cb238226b873e445b63158561559a322b3481dec4f29c20515450"
+    },
+    "residualcover/backend.py": {
+      "sha256": "53ec16bf9ccc2613aa14f58f6a71c46e6703378b6f90d543d5a24a3bf812db87"
+    },
+    "residualcover/pipeline.py": {
+      "sha256": "9758a888c13af972762ac278ea8e1d227754602c3b49abcf85696d632cf3a032"
+    },
+    "tests/test_frontend.py": {
+      "sha256": "c317cf1105ec3ce961681418e17e9c4ba42f6dc6b9ecbc483a0cd3d823a01620"
+    },
+    "BACKEND_PROVENANCE.json": {
+      "sha256": "280e15351e821cbd423ee79fd7d33d3fb113e06a0dd23fe3246825d45de31298"
+    }
+  },
+  "verbatim_files": {
+    "recap/frontend.py": "residualcover/frontend.py",
+    "recap/graph.py": "residualcover/graph.py",
+    "recap/greedy.py": "residualcover/greedy.py",
+    "recap/backend.py": "residualcover/backend.py"
+  },
+  "adaptations": {
+    "recap/selection.py": "New portable orchestration based on the recorded pipeline semantics; CPU only.",
+    "tests/test_core.py": "Original core tests with package imports changed and deployment integration tests omitted."
+  },
+  "backend_prior_provenance": [
+    {
+      "source": "OnceCover/oncecover/coverage_floor.py",
+      "source_file_sha256": "493591779685fc9ad5125461d667f8903c37673321625d1450ceb2dc190d3514",
+      "destination": "residualcover/backend.py",
+      "function_ast_sha256": {
+        "SEARCH": "c68ad38b98a731eb5e9db032f0a9e1173ecbae266a12d2256df661bce944210f",
+        "sparse_state": "52351d6ff62d56e9492a83f2b6115fd3326809959b91224f993aa85fbbd937df",
+        "ExchangeState": "395db22f812a0f7de408a08bd85e40e664f170b5495d8d64a1683ba816510a50",
+        "search": "d906b723988b03b403aa28a3ecdeb9951285f735b570dfdaab1dedbfbf113087"
+      }
+    },
+    {
+      "source": "OnceCover/oncecover/graph.py",
+      "source_file_sha256": "d8651caab1a026523ae98d8b47730e93f1267e94b35c53c1aa3b9f2e9f97cfed",
+      "destination": "residualcover/graph.py",
+      "function_ast_sha256": {
+        "allocate": "edbbeffbc612f86b915f3861f62548c8136d1ee1750dd51e443e2477b504008f",
+        "record_graph": "eedb50b8f40f2d90c58771599204b1f8b2428f46b2bc3b2f5c296414b1a847df"
+      }
+    },
+    {
+      "source": "OnceCover/oncecover/greedy.py",
+      "source_file_sha256": "16024a01fdbbe2a2ec252dff92026fadcb7ade52605c5114a51eb7d134e03f6c",
+      "destination": "residualcover/greedy.py",
+      "function_ast_sha256": {
+        "lazy_greedy": "60c26b5e2e775e4886a905dc3e6b358c343186f713c8042baa0ec2965a2676f7"
+      }
+    },
+    {
+      "source": "OnceCover/oncecover/io.py",
+      "source_file_sha256": "f29a6a4f12d90711cd23cdc768fb8a2fc72ba115779b10a770f33d38cfd91bf2",
+      "destination": "residualcover/io.py",
+      "function_ast_sha256": {
+        "read": "c2dfaf43d59458ed32ca9b4f06046527d59ba074e12ccd486791d7bfc03ed3d6",
+        "sha": "060fd04d8eeca9279d7cff70f6afdb7ef4700e23f912bf39b2204bcd14796247",
+        "identity": "e86ad70cce84088e732a9dea1468e21b6f7b5984b209435ad21189ea5f5b748b",
+        "write": "a00e50e8501d17ad5c441f53facb25b71377972f5e6a81bcce9069c3cfe5503c",
+        "immutable": "d9455a2aeeaae48d5470698becd5716c112e498a42a5a52f47989e8e12934f66"
+      }
+    }
+  ],
+  "rights": "No new license is assigned to the extracted code; authors must select a license after confirming rights."
+}

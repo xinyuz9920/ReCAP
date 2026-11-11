@@ -1,0 +1,49 @@
+{
+  "status": "Recorded protocol only; external training and evaluation engines are not bundled",
+  "training": {
+    "base_model": "Vicuna-7B-v1.5 with the common LLaVA stage-1 projector",
+    "vision_tower": "CLIP ViT-L/14-336",
+    "adapter_initialization": "fresh LoRA for each experiment",
+    "lora_rank": 128,
+    "lora_alpha": 256,
+    "learning_rate": 0.0002,
+    "mm_projector_learning_rate": 0.00002,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0,
+    "bf16": true,
+    "tf32": true,
+    "model_max_length": 2048,
+    "seed": 42,
+    "data_seed": 42,
+    "gpus": 2,
+    "per_device_train_batch_size": 4,
+    "gradient_accumulation_steps": 16,
+    "effective_batch_size": 128,
+    "selected_unique_records": 9369,
+    "prefix_padding_records": 103,
+    "selected_train_records": 9472,
+    "selected_optimizer_updates": 74,
+    "full_optimizer_updates": 488,
+    "checkpoint_policy": "no intermediate checkpoint"
+  },
+  "evaluation": {
+    "protocol_record": "once_select_table1_unified_v9",
+    "conversation": "vicuna_v1",
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens_generic": 64,
+    "max_new_tokens_mmbench_scienceqa": 1024,
+    "MMBench": "labeled dev; all option rotations; local circular accuracy",
+    "MME": "official calculation.py perception/cognition scores",
+    "AI2D": "local exact multiple-choice accuracy on 3088 test questions",
+    "POPE": "official LLaVA scorer; macro average of random/popular/adversarial accuracy and precision",
+    "ScienceQA": "official image-bearing subset accuracy after valid choice-letter normalization",
+    "OCRBench": "local v1 case-insensitive answer-substring rule; raw count divided by ten"
+  },
+  "limitations": [
+    "These parameters do not replace exact model, data, prompt, tokenizer and trainer version snapshots.",
+    "The public minimal experiment cannot regenerate the recorded benchmark table from scratch without external inputs and scorer integration.",
+    "No GPU launcher or server-specific GPU reservation process is distributed."
+  ]
+}
